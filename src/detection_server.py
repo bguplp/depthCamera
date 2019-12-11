@@ -10,7 +10,7 @@ from MaskRcnnDetector import MaskrcnnObjectDetector as Detector
 from pathlib import Path
 
 
-PORT = 8000
+PORT = 8765
 path_to_maskrcnn = Path(__file__).parent.parent.joinpath("Mask_RCNN-master")
 verbose = False
 
@@ -58,6 +58,9 @@ class image_detection_handler(http.server.BaseHTTPRequestHandler):
 
 
 
-with socketserver.TCPServer(("", PORT), image_detection_handler) as httpd:
-    print("serving at port", PORT)
-    httpd.serve_forever()
+#with socketserver.TCPServer(("", PORT), image_detection_handler) as httpd:
+#    print("serving at port", PORT)
+#    httpd.serve_forever()
+httpd = socketserver.TCPServer(("", PORT), image_detection_handler) 
+print("serving at port", PORT)
+httpd.serve_forever()

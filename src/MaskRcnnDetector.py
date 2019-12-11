@@ -18,12 +18,12 @@ class MaskrcnnObjectDetector:
 
         self.visualize = visualize
 
-        sys.path.append(pathToCoco)
+        sys.path.append("../"+pathToCoco)
         import coco
 
         # Download COCO trained weights from Releases if needed
         if not os.path.exists(pathToWeights):
-            utils.download_trained_weights(pathToWeights)
+            utils.download_trained_weights("../"+pathToWeights)
 
         class InferenceConfig(coco.CocoConfig):
             # Set batch size to 1 since we'll be running inference on
@@ -37,7 +37,7 @@ class MaskrcnnObjectDetector:
         self.model = modellib.MaskRCNN(mode="inference", model_dir=modelDir, config=config)
 
         # Load weights trained on MS-COCO
-        self.model.load_weights(pathToWeights, by_name=True)
+        self.model.load_weights("../"+pathToWeights, by_name=True)
 
         # COCO Class names
         # Index of the class in the list is its ID. For example, to get ID of

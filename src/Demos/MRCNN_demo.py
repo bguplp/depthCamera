@@ -14,7 +14,8 @@ import cv2 as cv
 import numpy as np
 
 #path_to_img = '/home/eyal/PycharmProjects/depthCamera/Mask_RCNN-master/images/4782628554_668bc31826_z.jpg'
-path_to_img = '/home/eyal/Pictures/line_simulation.png'
+#path_to_img = '/home/eyal/Pictures/line_simulation.png'
+path_to_img = '/home/tal/catkin_ws/src/line_detection/depthCamera/Mask_RCNN-master/assets/detection_refinement.png'
 
 #name the types of objects you'd like to detect. None for all known objects in the network
 desired_classes = ['person']

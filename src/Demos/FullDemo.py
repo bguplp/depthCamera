@@ -17,7 +17,7 @@ from pathlib import Path
 desired_classes = ["cup"]
 distance = 0.1
 path_to_maskrcnn = Path(__file__).parent.parent.parent.joinpath("Mask_RCNN-master")
-path_to_bagfile_dir = '/home/eyal/Documents/line_bags'
+path_to_bagfile_dir = str(path_to_maskrcnn) + '/line_bags'
 verbose = False
 #verbose=True
 #path_to_bagfile_dir = None
