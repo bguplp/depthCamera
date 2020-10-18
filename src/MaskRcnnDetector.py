@@ -11,7 +11,7 @@ import importlib.util
 
 class MaskrcnnObjectDetector:
     def __init__(self, pathToMrcnn, pathToCoco, pathToWeights, modelDir, class_names = None):
-        sys.path.append(pathToMrcnn)
+        sys.path.append("../"+pathToMrcnn)
         from mrcnn import utils
         import mrcnn.model as modellib
         from mrcnn import visualize
