@@ -64,3 +64,4 @@ class image_detection_handler(http.server.BaseHTTPRequestHandler):
 httpd = socketserver.TCPServer(("", PORT), image_detection_handler) 
 print("serving at port", PORT)
 httpd.serve_forever()
+
