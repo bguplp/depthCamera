@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import json
 import http.server
 import socketserver
@@ -53,12 +53,7 @@ class image_detection_handler(http.server.BaseHTTPRequestHandler):
         self._set_headers()
         self.wfile.write(json.dumps(converted_results).encode())
 
-        if verbose:
-            detector.display(image, detection_results)
-
-
-
-#with socketserver.TCPServer(("", PORT), image_detection_handler) as httpd:
+        if verbose:MaskRcnnDetectorer(("", PORT), image_detection_handler) as httpd:
 #    print("serving at port", PORT)
 #    httpd.serve_forever()
 httpd = socketserver.TCPServer(("", PORT), image_detection_handler) 
