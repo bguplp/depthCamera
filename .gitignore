@@ -1,0 +1,7 @@
+# exclude build files
+**/*build*/**
+
+# exclude vscode files
+.vscode/**
+
+*.pyc
